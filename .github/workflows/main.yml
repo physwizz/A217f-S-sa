@@ -1,9 +1,13 @@
 jobs: 
-  run_tests:
-   runs-on: ubuntu-20.04
+  run_build:
+   runs-on: ubuntu-latest
+   defaults: 
+     run:
+       working-directory: ./
    steps:
-   - uses: actions/checkout@v2
-   - name: Run script file 
-     run: | 
-        chmod +x ./build_kernel.sh ./build_kernel.sh 
-    shell: bash
+   - name: Check out the repository to the runner 
+     uses: actions/checkout@v4
+   - name: make script file executable 
+     run: chmod +x build_kernel.sh
+   - name: Run script file
+     run: ./build_kernel.sh
