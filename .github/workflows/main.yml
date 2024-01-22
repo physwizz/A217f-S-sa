@@ -1,3 +1,5 @@
+on:
+  push
 jobs: 
   run_build:
    runs-on: ubuntu-latest
