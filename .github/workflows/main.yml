@@ -1,1 +1,9 @@
-run build_kernel.sh 
+jobs: 
+  run_tests:
+   runs-on: ubuntu-20.04
+   steps:
+   - uses: actions/checkout@v2
+   - name: Run script file 
+     run: | 
+        chmod +x ./build_kernel.sh ./build_kernel.sh 
+    shell: bash
